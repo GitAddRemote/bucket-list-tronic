@@ -34,3 +34,6 @@
 
 #SDKMAN
 .sdkmanrc
+
+# Environmental Variables
+*.env
