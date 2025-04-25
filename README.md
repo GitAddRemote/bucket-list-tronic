@@ -116,3 +116,80 @@ Examples:
 If you don't specify `ENV_FILE`, it defaults to `.env.dev`.
 
 ---
+
+## 🔄 Database Migration Workflow
+
+This project uses the [Database Migration Plugin](https://github.com/grails/grails-database-migration) (Liquibase) to manage schema changes.
+
+### 📦 Initial Setup
+
+Once your environment is configured:
+
+```bash
+grails dbm-update
+```
+
+This applies all existing migrations to your dev DB.
+
+---
+
+### ✍️ Generating a New Migration
+
+After modifying domain classes:
+
+```bash
+grails dbm-generate-changelog add-<short-description>.groovy
+```
+
+Example:
+
+```bash
+grails dbm-generate-changelog add-user-profile-fields.groovy
+```
+
+Migration files appear in:
+
+```
+grails-app/migrations/
+```
+
+Commit new changelogs to version control.
+
+---
+
+### 🚀 Applying Migrations
+
+```bash
+grails dbm-update
+```
+
+This applies all pending changesets to your current database.
+
+---
+
+### 🧪 Checking Migration Status
+
+```bash
+grails dbm-status
+```
+
+Lists unapplied changelogs and shows your database's schema version.
+
+---
+
+## ⚙️ CI/CD Integration
+
+In your CI/CD pipeline, you can apply migrations automatically with:
+
+```bash
+grails dbm-update
+```
+
+If you use [Liquibase contexts](https://docs.liquibase.com/concepts/changelogs/attributes/contexts.html), apply migrations conditionally:
+
+```bash
+grails dbm-update --contexts=dev
+grails dbm-update --contexts=prod
+```
+
+Be careful running migrations in production without review — consider approval steps or review gates in your pipeline.
