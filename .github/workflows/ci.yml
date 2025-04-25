@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  grails-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java 8
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '8'
+
+      - name: Install Grails via SDKMAN
+        run: |
+          curl -s "https://get.sdkman.io" | bash
+          source "$HOME/.sdkman/bin/sdkman-init.sh"
+          sdk install grails 2.5.6
+          sdk use grails 2.5.6
+
+      - name: Grails Clean + Compile
+        run: |
+          source "$HOME/.sdkman/bin/sdkman-init.sh"
+          grails clean
+          grails compile
+
+      - name: Run Tests
+        run: |
+          source "$HOME/.sdkman/bin/sdkman-init.sh"
+          grails test-app

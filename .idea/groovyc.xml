@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GroovyCompilerProjectConfiguration">
+    <excludes>
+      <directory url="file://$USER_HOME$/.sdkman/candidates/groovy/2.4.21" includeSubdirectories="true" />
+    </excludes>
+  </component>
+</project>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="wrapper">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/wrapper/grails-wrapper-runtime-2.5.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/wrapper/springloaded-1.2.7.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
