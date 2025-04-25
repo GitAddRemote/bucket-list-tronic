@@ -49,6 +49,7 @@ docker-compose.override.yml
 *.log
 .env
 .env.*
+!.env.template
 
 # Volumes and build cache
 volumes/

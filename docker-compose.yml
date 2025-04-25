@@ -3,7 +3,7 @@ version: '3.8'
 services:
 
   postgres:
-    image: postgres:14
+    image: postgres:11
     container_name: bucketlist-postgres
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
