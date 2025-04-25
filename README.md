@@ -1,9 +1,9 @@
 # 🌍✈️ BUCKETLISTTRONIC — Explore the World, One Dream at a Time
 
 ![CI](https://github.com/GitAddRemote/bucket-list-tronic/actions/workflows/ci.yml/badge.svg)
-![Deploy](https://github.com/GitAddRemote/bucket-list-tronic/actions/workflows/deploy.yml/badge.svg)
 
-> 🧩 This project uses **Grails 2.5.6** and **Groovy 2.4.21** — maintained for legacy platform compatibility. Future migration to Grails 5 or Spring Boot is under consideration.  
+> 🧩 This project uses **Grails 2.5.6** and **Groovy 2.4.21** — maintained for legacy platform compatibility.
+> ⚠️ This project is not actively maintained and is intended for educational and demo purposes only.
 > ℹ️ This repo uses [.editorconfig](https://editorconfig.org) to maintain consistent formatting across editors and IDEs.
 
 Welcome to **BucketListTronic**, a legacy-modern hybrid Grails 2.5 web app that helps users track, explore, and celebrate their dream destinations — while showing off real-world engineering skills like interactive mapping, geolocation, asynchronous messaging, and secure RESTful backend design.
@@ -62,3 +62,4 @@ sdk env install  # installs Java 8, Grails 2.5.6, Groovy 2.4
 docker-compose up -d  # starts PostgreSQL + RabbitMQ
 
 grails run-app
+```
