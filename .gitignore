@@ -2,15 +2,13 @@
 # Grails / Groovy
 # ──────────────────────────────────────────────
 /target/
+/build/
 /stacktrace.log
 /test/reports/
 /logs/
-/build/
 /*.war
 /*.zip
 /plugin.xml
-.asscache
-.slcache
 
 # HSQLDB (legacy support)
 *Db.properties
@@ -22,29 +20,18 @@
 /web-app/plugins/
 /web-app/WEB-INF/classes/
 
+# Asset Pipeline caches
+.asscache
+.slcache
+
 # ──────────────────────────────────────────────
 # IntelliJ IDEA
 # ──────────────────────────────────────────────
 .idea/
 *.iml
-*.ipr
 *.iws
+*.ipr
 /out/
-.out/
-*.class
-
-# JetBrains IDEs and metadata
-/.idea/
-.idea_modules/
-*.sublime-workspace
-*.sublime-project
-
-# ──────────────────────────────────────────────
-# Eclipse
-# ──────────────────────────────────────────────
-.classpath
-.project
-.settings/
 
 # ──────────────────────────────────────────────
 # System / OS
