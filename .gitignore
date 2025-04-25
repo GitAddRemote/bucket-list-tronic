@@ -9,6 +9,8 @@
 /*.war
 /*.zip
 /plugin.xml
+.asscache
+.slcache
 
 # HSQLDB (legacy support)
 *Db.properties
