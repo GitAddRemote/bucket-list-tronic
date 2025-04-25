@@ -30,6 +30,7 @@
 *.ipr
 *.iws
 /out/
+.out/
 *.class
 
 # JetBrains IDEs and metadata
