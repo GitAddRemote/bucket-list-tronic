@@ -10,6 +10,26 @@ jobs:
   grails-build:
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:11
+        env:
+          POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+          POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U ${{ secrets.POSTGRES_USER }}"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
+    env:
+      POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+      POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+      POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -26,6 +46,13 @@ jobs:
           source "$HOME/.sdkman/bin/sdkman-init.sh"
           sdk install grails 2.5.6
           sdk use grails 2.5.6
+
+      - name: Wait for PostgreSQL to be ready
+        run: |
+          until pg_isready -h localhost -U $POSTGRES_USER; do
+            echo "Waiting for PostgreSQL..."
+            sleep 2
+          done
 
       - name: Grails Clean + Compile
         run: |
