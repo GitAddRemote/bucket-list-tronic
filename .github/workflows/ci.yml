@@ -60,6 +60,11 @@ jobs:
           grails clean
           grails compile
 
+      - name: Run DB Migrations
+        run: |
+          source "$HOME/.sdkman/bin/sdkman-init.sh"
+          grails dbm-update
+
       - name: Run Tests
         run: |
           source "$HOME/.sdkman/bin/sdkman-init.sh"
