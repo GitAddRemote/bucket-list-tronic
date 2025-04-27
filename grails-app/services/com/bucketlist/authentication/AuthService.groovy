@@ -9,11 +9,13 @@ import org.apache.commons.logging.LogFactory
 class AuthService {
   private static final log = LogFactory.getLog(this)
 
+  def springSecurityService
+
   /**
    * Attempt to authenticate a user by username (email) and raw password.
    * @return the AppUser if credentials match, otherwise null
    */
-  AppUser login(String username, String rawPassword) {
+  AppUser authenticate(String username, String rawPassword) {
     if (!username || !rawPassword) {
       log.warn "Login attempt with empty username or password"
       return null
@@ -21,8 +23,10 @@ class AuthService {
 
     AppUser user = AppUser.findByUsername(username)
     if (user) {
-      String storedHash = user.passwordHash  // adjust if your domain uses a different field
+      String storedHash = user.password  // adjust if your domain uses a different field
       if (BCrypt.checkpw(rawPassword, storedHash)) {
+        // populate the SecurityContext
+        springSecurityService.reauthenticate(username)
         log.info  "User [$username] authenticated successfully"
         return user
       }

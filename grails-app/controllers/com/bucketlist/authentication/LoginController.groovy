@@ -1,8 +1,11 @@
 package com.bucketlist.authentication
 
+import com.bucketlist.auth.AppUser
+
 class LoginController {
 
   AuthService authService
+  def springSecurityService
 
   def index() {
     if (session?.userId) {
@@ -14,7 +17,7 @@ class LoginController {
   }
 
   def authenticate() {
-    def user = authService.login(params.username, params.password)
+    def user = authService.authenticate(params.username, params.password)
     if (user) {
       session.userId = user.id
       flash.message = "Welcome back!"
@@ -23,6 +26,16 @@ class LoginController {
       flash.message = "Invalid credentials"
       redirect(action: 'index')
     }
+  }
+
+  AppUser login(String username, String rawPassword) {
+    def user = AppUser.findByUsername(username)
+    if (user && BCrypt.checkpw(rawPassword, user.password)) {
+      // populate the SecurityContext
+      springSecurityService.reauthenticate(username)
+      return user
+    }
+    null
   }
 
   def logout() {

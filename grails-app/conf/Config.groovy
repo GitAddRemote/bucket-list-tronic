@@ -144,4 +144,4 @@ grails.plugin.springsecurity.successHandler.defaultTargetUrl  = '/dashboard'
 grails.plugin.springsecurity.failureHandler.defaultFailureUrl = '/login'
 grails.plugin.springsecurity.logout.postOnly             = false
 grails.plugin.springsecurity.logout.redirectUrl          = '/login'
-grails.plugin.springsecurity.apf.filterProcessesUrl      = '/login/authenticate'
+//grails.plugin.springsecurity.apf.filterProcessesUrl      = '/login/authenticate'
