@@ -1,13 +1,12 @@
+// grails-app/conf/UrlMappings.groovy
 class UrlMappings {
+  static mappings = {
 
-	static mappings = {
-        "/$controller/$action?/$id?(.$format)?"{
-            constraints {
-                // apply constraints here
-            }
-        }
+    "/"(controller: 'login', action: 'index')
+    "/login"(controller: 'login', action: 'index')
 
-        "/"(view:"/index")
-        "500"(view:'/error')
-	}
+    "/login/authenticate"(controller: 'login', action: 'authenticate')
+
+    "/dashboard"(controller: 'dashboard', action: 'index')
+  }
 }

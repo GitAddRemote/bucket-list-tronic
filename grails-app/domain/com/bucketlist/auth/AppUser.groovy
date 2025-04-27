@@ -1,4 +1,4 @@
-package com.bucketlist
+package com.bucketlist.auth
 
 class AppUser implements Serializable {
 
@@ -57,9 +57,5 @@ class AppUser implements Serializable {
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false
-	}
-
-	static mapping = {
-		password column: '`password`'
 	}
 }

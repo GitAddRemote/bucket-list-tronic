@@ -1,4 +1,4 @@
-package com.bucketlist
+package com.bucketlist.auth
 
 import grails.gorm.DetachedCriteria
 import groovy.transform.ToString

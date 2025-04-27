@@ -1,4 +1,4 @@
-package com.bucketlist
+package com.bucketlist.auth
 
 class Role implements Serializable {
 

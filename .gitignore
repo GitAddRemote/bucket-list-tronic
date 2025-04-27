@@ -9,6 +9,8 @@
 /*.war
 /*.zip
 /plugin.xml
+/grails-app/lib/
+
 
 # HSQLDB (legacy support)
 *Db.properties

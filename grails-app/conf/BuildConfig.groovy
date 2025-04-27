@@ -63,6 +63,7 @@ grails.project.dependency.resolution = {
     compile 'org.grails:grails-core:2.5.6'
     compile 'org.codehaus.groovy:groovy-all:2.4.21'
     runtime 'org.postgresql:postgresql:42.2.27'
+    compile 'org.mindrot:jbcrypt:0.4'
   }
 
   plugins {
