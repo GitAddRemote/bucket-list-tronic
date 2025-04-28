@@ -8,6 +8,6 @@ class DashboardController {
 
   @Secured('ROLE_USER')
   def index() {
-    render "Welcome to your dashboard, user #${springSecurityService.currentUser.username}"
+     render view: 'index', model: [ username: springSecurityService.currentUser.username ]
   }
 }

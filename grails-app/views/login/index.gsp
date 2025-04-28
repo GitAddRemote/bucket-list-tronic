@@ -1,25 +1,21 @@
-<!-- grails-app/views/login/index.gsp -->
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="layout" content="main"/>
-    <title>Login</title>
-</head>
-<body>
-    <h1>Login</h1>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<meta name="layout" content="main"/>
 
-    <g:if test="${flash.message}">
-        <div class="alert">${flash.message}</div>
-    </g:if>
+<h1>Login</h1>
 
-    <g:form controller="login" action="authenticate">
-      <label for="username">Username (Email)</label>
-      <g:textField name="username" />
+<g:if test="${flash.message}">
+  <div class="alert alert-warning">${flash.message}</div>
+</g:if>
 
-      <label for="password">Password</label>
-      <g:passwordField name="password" />
-
-      <g:submitButton name="login" value="Login" />
-    </g:form>
-</body>
-</html>
+<g:form controller="login" action="authenticate">
+  <div class="form-group">
+    <label for="username">Username (Email)</label>
+    <g:textField name="username" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <g:passwordField name="password" class="form-control"/>
+  </div>
+  <g:submitButton name="login" value="Login"
+                  class="btn btn-primary"/>
+</g:form>
