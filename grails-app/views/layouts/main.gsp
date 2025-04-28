@@ -3,16 +3,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <!-- Tell Grails to use this layout -->
   <meta name="layout" content="main"/>
   <title><g:layoutTitle default="Bucket List Tronic"/></title>
-
-  <!-- Head inserts (e.g. JS/CSS from views) -->
   <g:layoutHead/>
 
-  <!-- Your global styles -->
-  <link rel="stylesheet" href="${resource(dir:'css', file:'style.css')}"/>
-  <!-- Bootstrap (optional) -->
+  <!-- App CSS -->
+  <link rel="stylesheet" href="${createLinkTo(dir:'css', file:'style.css')}"/>
+
+  <!-- Bootstrap CSS -->
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -21,16 +19,23 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 
-  <!-- Render the header partial -->
-  <g:render template="/layouts/header"/>
+<g:render template="/layouts/header"/>
 
-  <!-- Main content -->
-  <main class="container flex-grow-1 mt-4">
-    <g:layoutBody/>
-  </main>
+<main class="container flex-grow-1 mt-4">
+  <g:layoutBody/>
+</main>
 
-  <!-- Render the footer partial -->
-  <g:render template="/layouts/footer"/>
+<g:render template="/layouts/footer"/>
+
+<!-- Bootstrap JS (for nav toggle & dropdown) -->
+<script
+  src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+  crossorigin="anonymous"></script>
 
 </body>
 </html>

@@ -5,38 +5,30 @@
   --font-family: 'Open Sans', sans-serif;
   --color-primary: #2D9CDB;
   --color-secondary: #56CCF2;
-  --color-accent: #F2994A;
   --color-dark: #333333;
   --color-light: #F2F2F2;
   --color-bg: #FFFFFF;
 }
 
-/* Global resets & body */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* Reset & base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 html, body {
   height: 100%;
-  background-color: var(--color-bg);
   font-family: var(--font-family);
+  background: var(--color-bg);
   color: var(--color-dark);
   line-height: 1.6;
 }
 
-/* Layout helpers */
+/* Flex helpers */
 .d-flex { display: flex; }
 .flex-column { flex-direction: column; }
 .min-vh-100 { min-height: 100vh; }
 .flex-grow-1 { flex-grow: 1; }
 .mt-4 { margin-top: 1.5rem; }
-.p-4 { padding: 1.5rem; }
-.text-center { text-align: center; }
 .rounded-circle { border-radius: 50%; }
 
-/* Header / Navbar */
+/* Navbar overrides */
 .navbar {
   border-bottom: 1px solid var(--color-secondary);
 }
@@ -44,19 +36,23 @@ html, body {
   font-weight: 700;
   color: var(--color-primary) !important;
 }
-.navbar-brand:hover {
-  color: var(--color-secondary) !important;
+.navbar-nav {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+}
+.navbar-nav .nav-item + .nav-item {
+  margin-left: 1rem;
 }
 .nav-link {
+  font-weight: 600 !important;
   color: var(--color-dark) !important;
-  font-weight: 600;
-  margin-left: 1rem;
 }
 .nav-link:hover {
   color: var(--color-primary) !important;
 }
 
-/* Main content container */
+/* Main container */
 .container {
   max-width: 1140px;
   margin: 0 auto;
@@ -64,157 +60,32 @@ html, body {
 
 /* Dashboard widget */
 .dashboard-container {
-  background-color: var(--color-light);
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: var(--color-light);
   padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Buttons */
-.btn-primary {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-  color: #fff;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-}
-.btn-primary:hover {
-  background-color: var(--color-secondary);
-  border-color: var(--color-secondary);
-}
-
-/* Links */
-a {
-  color: var(--color-primary);
-}
-a:hover {
-  text-decoration: underline;
-}
-
-/* Footer */
-footer {
-  background-color: var(--color-light);
-  padding: 2rem 0;
-}
-footer h5 {
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-ul {
-  list-style: none;
-}
-ul li a {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: var(--color-dark);
-}
-ul li a:hover {
-  color: var(--color-primary);
-}
-
-/* Utility */
-h1 {
-  margin-bottom: 1rem;
-}
-
-/*-----------------------------------*
- *  Header: make nav items horizontal
- *-----------------------------------*/
-
-/* Remove default bullets/margins */
-nav ul,
-nav ul li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Flex‐layout the top‐level list */
-nav ul {
-  display: flex;
-  align-items: center;
-  /* space between brand and nav links */
-  justify-content: space-between;
-}
-
-/* Space out each link */
-nav ul li {
-  margin-right: 1rem;
-}
-
-/*-----------------------------------*
- *  Footer: make columns horizontal
- *-----------------------------------*/
-
-/* Wrapper around all footer columns */
+/* Footer flex layout */
 .footer-container {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;      /* stacks on narrow screens */
-  padding: 2rem 0;
-  background: var(--footer-bg, #f8f9fa);
-}
-
-/* Each column in the footer */
-.footer-container .footer-column {
-  flex: 1 1 150px;      /* grow, shrink, min-width */
-  margin: 0 1rem;
-  text-align: center;
-}
-
-/* Clean up footer lists */
-.footer-container ul {
-  list-style: none;
-  padding: 0;
-  margin: 0.5rem 0;
-}
-
-.footer-container li {
-  margin: 0.25rem 0;
-}
-
-/*———————————————————————*
- * Header overrides
- *———————————————————————*/
-
-/* Make sure the .navbar-nav always lays its items out in a row */
-.navbar-nav {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center;
-}
-
-/* Space your menu items out */
-.navbar-nav .nav-item + .nav-item {
-  margin-left: 1rem;
-}
-
-/*———————————————————————*
- * Footer overrides
- *———————————————————————*/
-
-/* If you haven’t already, wrap your columns in a .footer-container */
-/* and each column in a .footer-column in your _footer.gsp partial. */
-
-.footer-container {
-  display: flex;               /* lay columns side by side */
-  justify-content: space-around;
-  flex-wrap: wrap;             /* wrap on narrow screens */
+  flex-wrap: wrap;
   padding: 2rem 0;
   background: var(--color-light);
 }
-
 .footer-column {
-  flex: 1 1 150px;             /* grow/shrink, with a min-width */
+  flex: 1 1 150px;
   margin: 0 1rem;
   text-align: center;
 }
-
-/* Clean up the lists in each column */
+.footer-column h5 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
 .footer-column ul {
   list-style: none;
   padding: 0;
-  margin: 0.5rem 0;
 }
 .footer-column li {
   margin: 0.25rem 0;
