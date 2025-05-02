@@ -136,7 +136,8 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
   '/**/js/**':        ['permitAll'],
   '/**/css/**':       ['permitAll'],
   '/**/images/**':    ['permitAll'],
-  '/**/favicon.ico':  ['permitAll']
+  '/**/favicon.ico':  ['permitAll'],
+  '/**':              ['IS_AUTHENTICATED_FULLY']
 ]
 
 // ✨ Custom Spring Security login/logout behavior (Option A)
@@ -146,4 +147,3 @@ grails.plugin.springsecurity.successHandler.defaultTargetUrl  = '/dashboard'
 grails.plugin.springsecurity.failureHandler.defaultFailureUrl = '/login'
 grails.plugin.springsecurity.logout.postOnly             = false
 grails.plugin.springsecurity.logout.redirectUrl          = '/login'
-//grails.plugin.springsecurity.apf.filterProcessesUrl      = '/login/authenticate'
