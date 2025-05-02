@@ -93,6 +93,8 @@ grails.app.context = "/"
 
 environments {
   development {
+    grails.plugin.databasemigration.updateOnStart = true
+    grails.plugin.databasemigration.updateOnStartFileNames = ['changelog.groovy']
     grails.logging.jul.usebridge = true
   }
   production {

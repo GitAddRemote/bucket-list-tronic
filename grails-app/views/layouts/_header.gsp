@@ -21,6 +21,9 @@
           Dashboard
         </g:link>
       </li>
+      <li class="nav-item">
+        <g:link class="nav-link" controller="location" action="index">My Locations</g:link>
+      </li>
       <!-- more left-nav links here -->
     </ul>
 

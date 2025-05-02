@@ -1,4 +1,4 @@
-import com.bucketlist.auth.AppUser
+import com.bucketlist.location.Location
 import com.bucketlist.auth.Role
 import com.bucketlist.auth.AppUserRole
 
@@ -18,6 +18,11 @@ class BootStrap {
         user.errors.allErrors.each { println it }
       }
       AppUserRole.create(user, userRole, /* flush: */ true)
+
+      if (Location.countByUser(user) == 0) {
+        new Location(name: 'Eiffel Tower', description: 'See Paris from above', user: user).save()
+        new Location(name: 'Grand Canyon', description: 'Hike the rim', user: user).save()
+      }
     }
   }
 
