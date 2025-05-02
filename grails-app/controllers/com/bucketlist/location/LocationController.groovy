@@ -1,6 +1,5 @@
-package com.bucketlist
+package com.bucketlist.location
 
-import com.bucketlist.location.Location
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
