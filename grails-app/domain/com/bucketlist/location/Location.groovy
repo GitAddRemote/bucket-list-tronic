@@ -1,6 +1,6 @@
 package com.bucketlist.location
 
-import com.bucketlist.auth.AppUser
+import com.bucketlist.authentication.AppUser
 
 class Location {
     String   name

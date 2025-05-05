@@ -1,6 +1,6 @@
 package com.bucketlist.authentication
 
-import com.bucketlist.auth.AppUser
+
 import grails.transaction.Transactional
 import org.springframework.security.crypto.bcrypt.BCrypt
 import org.apache.commons.logging.LogFactory

@@ -34,7 +34,7 @@
 		<g:message code="location.user.label" default="User" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="user" name="user.id" from="${com.bucketlist.auth.AppUser.list()}" optionKey="id" required="" value="${locationInstance?.user?.id}" class="many-to-one"/>
+	<g:select id="user" name="user.id" from="${com.bucketlist.authentication.AppUser.list()}" optionKey="id" required="" value="${locationInstance?.user?.id}" class="many-to-one"/>
 
 </div>
 

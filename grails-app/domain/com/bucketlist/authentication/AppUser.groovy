@@ -1,4 +1,4 @@
-package com.bucketlist.auth
+package com.bucketlist.authentication
 
 class AppUser implements Serializable {
 

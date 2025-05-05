@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         version="3.0"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                             http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+  <!-- ─── Session Timeout & Cookie Config ─── -->
+  <session-config>
+    <!-- Session invalidates after 20 minutes of inactivity -->
+    <session-timeout>20</session-timeout>
+
+    <cookie-config>
+      <!-- Prevent JavaScript access -->
+      <http-only>true</http-only>
+
+      <!-- Set to true when running over HTTPS -->
+      <secure>false</secure>
+
+      <!-- JSESSIONID expires in 1200 seconds (20 minutes) -->
+      <max-age>1200</max-age>
+    </cookie-config>
+  </session-config>
+
+  <!-- Welcome file -->
+  <welcome-file-list>
+    <welcome-file>index.gsp</welcome-file>
+  </welcome-file-list>
+
+  <!-- (Any additional filters, listeners, or servlets go here) -->
+
+</web-app>
