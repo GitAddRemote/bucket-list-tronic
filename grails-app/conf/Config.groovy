@@ -125,9 +125,9 @@ log4j.main = {
 }
 
 // Added by the Spring Security Core plugin:
-grails.plugin.springsecurity.userLookup.userDomainClassName   = 'com.bucketlist.auth.AppUser'
-grails.plugin.springsecurity.userLookup.authorityJoinClassName= 'com.bucketlist.auth.AppUserRole'
-grails.plugin.springsecurity.authority.className             = 'com.bucketlist.auth.Role'
+grails.plugin.springsecurity.userLookup.userDomainClassName   = 'com.bucketlist.authentication.AppUser'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName= 'com.bucketlist.authentication.AppUserRole'
+grails.plugin.springsecurity.authority.className             = 'com.bucketlist.authentication.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
   '/':                ['permitAll'],
   '/index':           ['permitAll'],

@@ -1,7 +1,5 @@
 package com.bucketlist.authentication
 
-import com.bucketlist.auth.AppUser
-
 class LoginController {
 
   AuthService authService

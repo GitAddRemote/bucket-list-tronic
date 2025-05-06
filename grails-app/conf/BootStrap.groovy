@@ -1,6 +1,6 @@
 import com.bucketlist.location.Location
-import com.bucketlist.auth.Role
-import com.bucketlist.auth.AppUserRole
+import com.bucketlist.authentication.Role
+import com.bucketlist.authentication.AppUserRole
 
 class BootStrap {
 
@@ -8,7 +8,7 @@ class BootStrap {
   def authService
 
   def init = { servletContext ->
-    def AppUser = grailsApplication.classLoader.loadClass('com.bucketlist.auth.AppUser')
+    def AppUser = grailsApplication.classLoader.loadClass('com.bucketlist.authentication.AppUser')
 
     if (!AppUser.count()) {
       def userRole = Role.findOrSaveByAuthority('ROLE_USER')
